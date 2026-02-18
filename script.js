@@ -121,7 +121,7 @@ document.querySelectorAll('section').forEach(sec => {
 const staggerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const children = entry.target.querySelectorAll('.skill-tag, .edu-card, .timeline-item');
+            const children = entry.target.querySelectorAll('.skill-tag');
             children.forEach((child, index) => {
                 setTimeout(() => {
                     child.style.animation = `fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards`;

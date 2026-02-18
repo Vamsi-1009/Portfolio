@@ -644,6 +644,12 @@ section:nth-child(even) {
     line-height: 1.8;
 }
 
+.about-text,
+.about-card,
+.stat-card {
+    opacity: 0;
+}
+
 .about-text strong {
     color: var(--text);
 }
@@ -1147,6 +1153,7 @@ section.visible {
 }
 
 .timeline-item {
+    opacity: 0;
     position: relative;
     margin-bottom: 40px;
 }
@@ -1483,15 +1490,15 @@ section.visible .section-subtitle {
 
 /* About Section Stagger */
 section.visible .about-text {
-    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 
 section.visible .about-card {
-    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
 
 section.visible .stat-card {
-    animation: fadeInUp 0.6s var(--bounce) backwards;
+    animation: fadeInUp 0.6s var(--bounce) forwards;
 }
 
 section.visible .stat-card:nth-child(1) {
@@ -1504,6 +1511,27 @@ section.visible .stat-card:nth-child(2) {
 
 section.visible .stat-card:nth-child(3) {
     animation-delay: 0.5s;
+}
+
+.timeline-item {
+    opacity: 0;
+}
+
+/* Timeline Stagger (CSS-driven) */
+section.visible .timeline-item {
+    animation: fadeInUp 0.8s var(--bounce) forwards;
+}
+
+section.visible .timeline-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+section.visible .timeline-item:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+section.visible .timeline-item:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
 /* Enhanced Hover State for Interactive Elements */
