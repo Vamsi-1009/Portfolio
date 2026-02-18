@@ -124,70 +124,7 @@ img {
     transition: width 0.1s linear;
 }
 
-/* --- CUSTOM CURSOR --- */
-body {
-    cursor: none;
-}
 
-a,
-button,
-.cursor-hover {
-    cursor: none;
-}
-
-/* Hide default cursor */
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    z-index: 10000;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s;
-}
-
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--accent);
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    z-index: 10000;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s, opacity 0.3s;
-}
-
-/* Cursor Hover State */
-.cursor-hovered .cursor-outline {
-    width: 60px;
-    height: 60px;
-    background: rgba(108, 99, 255, 0.1);
-    border-color: transparent;
-}
-
-@media (max-width: 1024px) {
-
-    /* Disable custom cursor on touch devices */
-    body,
-    a,
-    button,
-    .cursor-hover {
-        cursor: auto;
-    }
-
-    .cursor-dot,
-    .cursor-outline {
-        display: none;
-    }
-}
 
 /* --- SCROLLBAR ----------------------------------------------- */
 ::-webkit-scrollbar {
@@ -1308,6 +1245,8 @@ section.visible {
 }
 
 .edu-card {
+    opacity: 0;
+    /* Hidden for animation */
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -1540,6 +1479,31 @@ section.visible .section-title {
 section.visible .section-subtitle {
     transition-delay: 0.3s;
     animation: fadeInUp 0.8s var(--bounce) 0.3s backwards;
+}
+
+/* About Section Stagger */
+section.visible .about-text {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+section.visible .about-card {
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+section.visible .stat-card {
+    animation: fadeInUp 0.6s var(--bounce) backwards;
+}
+
+section.visible .stat-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+section.visible .stat-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+section.visible .stat-card:nth-child(3) {
+    animation-delay: 0.5s;
 }
 
 /* Enhanced Hover State for Interactive Elements */

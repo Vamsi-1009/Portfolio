@@ -258,35 +258,8 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* --- CUSTOM CURSOR & SCROLL PROGRESS --- */
-const cursorDot = document.querySelector('.cursor-dot');
-const cursorOutline = document.querySelector('.cursor-outline');
+/* --- SCROLL PROGRESS --- */
 const progressBar = document.getElementById('scroll-progress');
-
-// Custom Cursor Logic
-if (cursorDot && cursorOutline) {
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Dot follows instantly
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        // Outline follows with lag
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    // Hover effect on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .proj-card, .contact-card');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hovered'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hovered'));
-    });
-}
 
 // Global Scroll Progress Bar
 window.addEventListener('scroll', () => {
