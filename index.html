@@ -1735,10 +1735,11 @@ input, select, textarea { font-size: 16px; }
                         <textarea id="contact-message" class="form-input form-textarea" placeholder="Share your thoughts..."></textarea>
                     </div>
 
-                    <a href="/cdn-cgi/l/email-protection#f4829599879d9f869d879c9a95849598989599b49399959d98da979b99" class="btn btn-send">
+                    <div id="send-status" class="send-status" style="display:none;"></div>
+                    <button id="send-btn" class="btn btn-send" type="button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                         send
-                    </a>
+                    </button>
 
                     <div class="contact-socials">
                         <a href="tel:+919676531428" class="contact-btn" aria-label="Phone">
