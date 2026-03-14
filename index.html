@@ -212,10 +212,47 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 }
 .hero-name .accent { color: var(--accent); }
 
+.hero-photo {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.9);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    margin: 0 auto 18px;
+    display: block;
+}
+
+.hero-name-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-name-row .hero-name {
+    margin: 0;
+    line-height: 1.05;
+    font-size: clamp(2.2rem, 7vw, 4.8rem);
+}
+
 .hero-role {
-    font-family: var(--font-mono);
-    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-    color: var(--text2); margin-bottom: 22px;
+    font-family: inherit;
+    font-size: clamp(1rem, 2.2vw, 1.07rem);
+    color: var(--text);
+    margin: 0;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.hero-role .prefix { color: var(--accent); font-weight: 600; margin-right: 3px; }
+
     min-height: 2em; letter-spacing: 0.01em;
     display: flex; align-items: center; gap: 4px;
 }
@@ -244,20 +281,23 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     flex-wrap: wrap; margin-bottom: 44px;
 }
 
-.hero-socials { display: flex; align-items: center; gap: 7px; }
+.hero-socials { display: flex; align-items: center; gap: 10px; }
 
 .social-btn {
-    width: 36px; height: 36px;
+    width: 40px; height: 40px;
     display: flex; align-items: center; justify-content: center;
-    border: 1px solid var(--border2); border-radius: 8px;
-    color: var(--text3);
-    transition: color var(--transition), border-color var(--transition), background var(--transition);
+    border: 1px solid rgba(50,70,120,0.35); border-radius: 9px;
+    color: #1f2b44;
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
 }
 .social-btn:hover {
-    color: var(--text); border-color: var(--border3);
-    background: rgba(41,82,204,0.07);
+    color: #112240; border-color: rgba(41,82,204,0.4);
+    background: rgba(41,82,204,0.12);
+    transform: translateY(-1px);
 }
-.social-btn svg { flex-shrink: 0; }
+.social-btn svg { flex-shrink: 0; width: 18px; height: 18px; }
 
 .hero-scroll {
     position: absolute; bottom: 32px; left: 50%;
@@ -1274,13 +1314,16 @@ input, select, textarea { font-size: 16px; }
                 Available for opportunities
             </div>
 
-            <h1 class="hero-name ani" data-d="1">
-                Pallam<br><span class="accent">Vamsi</span>
-            </h1>
+            <img src="DSC_0954.JPG.jpeg" alt="Pallam Vamsi" class="hero-photo ani" data-d="1" />
 
-            <p class="hero-role ani" data-d="2">
-                <span class="prefix">// </span><span id="typed"></span><span class="typed-cursor"></span>
-            </p>
+            <div class="hero-name-row ani" data-d="1">
+                <h1 class="hero-name">
+                    Pallam<br><span class="accent">Vamsi</span>
+                </h1>
+                <p class="hero-role">
+                    <span class="prefix">// </span><span id="typed"></span><span class="typed-cursor"></span>
+                </p>
+            </div>
 
             <p class="hero-desc ani" data-d="3">
                 Full Stack Developer &amp; CS Engineering graduate passionate about building
@@ -1303,7 +1346,7 @@ input, select, textarea { font-size: 16px; }
                 <a href="https://github.com/Vamsi-1009" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </a>
-                <a href="/cdn-cgi/l/email-protection#89ffe8e4fae0e2fbe0fae1e7e8f9e8e5e5e8e4c9eee4e8e0e5a7eae6e4" class="social-btn" aria-label="Email">
+                <a href="mailto:vamsikrishnapallam@gmail.com" class="social-btn" aria-label="Email">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="17" height="17"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </a>
             </div>
@@ -1380,7 +1423,7 @@ input, select, textarea { font-size: 16px; }
                         </div>
                         <div>
                             <p class="info-label">Email</p>
-                            <p class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2751464a544e4c554e544f494657464b4b464a67404a464e4b0944484a">[email&#160;protected]</a></p>
+                            <p class="info-value"><a href="mailto:vamsikrishnapallam@gmail.com">vamsikrishnapallam@gmail.com</a></p>
                         </div>
                     </div>
 
