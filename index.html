@@ -1323,6 +1323,153 @@
         }
 
         /* ============================================================
+   CERTIFICATIONS
+============================================================ */
+        #certifications {
+            background: var(--bg);
+        }
+
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 28px 28px;
+            background: #d9e3f1;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 2px 12px rgba(41, 82, 204, 0.07);
+            transition: transform 0.28s ease, box-shadow 0.28s ease,
+                background 0.22s ease, border-color 0.22s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.32s ease;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .cert-card:hover {
+            background: var(--surface);
+            border-color: var(--border3);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(41, 82, 204, 0.14);
+        }
+
+        .cert-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .cert-icon-wrap {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-mid);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .cert-card:hover .cert-icon-wrap {
+            background: var(--accent-mid);
+            transform: scale(1.08) rotate(-4deg);
+        }
+
+        .cert-body {
+            flex: 1;
+        }
+
+        .cert-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-family: var(--font-mono);
+            padding: 2px 9px;
+            border-radius: 4px;
+            font-weight: 500;
+            background: var(--accent-dim);
+            color: var(--accent);
+            border: 1px solid var(--accent-mid);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cert-card:hover .cert-badge {
+            background: var(--accent-mid);
+            border-color: var(--accent);
+        }
+
+        .cert-date {
+            font-size: 0.775rem;
+            font-family: var(--font-mono);
+            color: var(--text3);
+        }
+
+        .cert-title {
+            font-size: 0.985rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 3px;
+            transition: color 0.2s ease;
+            line-height: 1.4;
+        }
+
+        .cert-card:hover .cert-title {
+            color: var(--accent);
+        }
+
+        .cert-issuer {
+            font-size: 0.825rem;
+            color: var(--text3);
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-family: var(--font-mono);
+        }
+
+        .cert-desc {
+            font-size: 0.855rem;
+            color: var(--text2);
+            line-height: 1.78;
+            font-weight: 380;
+        }
+
+        @media (max-width: 480px) {
+            .cert-card {
+                flex-direction: column;
+                gap: 14px;
+                padding: 20px 18px;
+            }
+        }
+
+        /* ============================================================
    HOVER ANIMATIONS — GLOBAL ENHANCEMENTS
 ============================================================ */
 
@@ -2193,6 +2340,7 @@
                 <li><a href="#skills" class="nav-item">Skills</a></li>
                 <li><a href="#projects" class="nav-item">Projects</a></li>
                 <li><a href="#education" class="nav-item">Education</a></li>
+                <li><a href="#certifications" class="nav-item">Certifications</a></li>
                 <li><a href="#contact" class="nav-item nav-cta">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -2425,6 +2573,8 @@
                         <span class="tag">CSS</span>
                         <span class="tag">Node.js</span>
                         <span class="tag">Express.js</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Tailwind CSS</span>
                     </div>
                     <div class="skill-bar-wrap">
                         <div class="skill-bar" data-w="90"></div>
@@ -2444,6 +2594,7 @@
                     <div class="tags">
                         <span class="tag">MySQL</span>
                         <span class="tag">SQLite</span>
+                        <span class="tag">PostgreSQL</span>
                         <span class="tag">REST APIs</span>
                         <span class="tag">JWT</span>
                     </div>
@@ -2505,6 +2656,8 @@
                     <div class="tags">
                         <span class="tag">Full Stack Dev</span>
                         <span class="tag">Generative AI</span>
+                        <span class="tag">Vision APIs</span>
+                        <span class="tag">AI Integration</span>
                     </div>
                     <div class="skill-bar-wrap">
                         <div class="skill-bar" data-w="78"></div>
@@ -2742,6 +2895,45 @@
                     <div class="edu-meta">
                         <p class="edu-year">2018 — 2019</p>
                         <p class="edu-score">CGPA: 8.9</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ====================================================
+         CERTIFICATIONS
+    ===================================================== -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Certifications</p>
+                <h2 class="section-title">Achievements</h2>
+                <p class="section-sub">Milestones and recognitions earned along the journey.</p>
+            </div>
+
+            <div class="cert-list">
+                <div class="cert-card reveal" data-d="1">
+                    <div class="cert-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24"
+                            height="24">
+                            <circle cx="12" cy="8" r="6" />
+                            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                        </svg>
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-top">
+                            <span class="cert-badge">Certificate of Participation</span>
+                            <span class="cert-date">February 2026</span>
+                        </div>
+                        <p class="cert-title">AI for Vizag Buildathon 2026</p>
+                        <p class="cert-issuer">FluentGrid</p>
+                        <p class="cert-desc">Participated in a 24-hour AI buildathon, collaborating to design and
+                            develop AI-driven solutions in a fast-paced environment. Built <strong><a href="#projects"
+                                    style="color:var(--accent);text-decoration:none;">VaidyaDrishti AI</a></strong> — an
+                            AI-powered medical prescription scanner.</p>
                     </div>
                 </div>
             </div>
